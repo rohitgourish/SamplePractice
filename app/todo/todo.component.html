@@ -1,0 +1,12 @@
+<input type = "text" class="form-control" [(ngModel)]="name" (keyup.enter)="addTodo()">
+<button class="btn btn-primary" (click)="addTodo()">ADD</button>
+
+<ul>
+    <li *ngFor="let item of todos" (dblclick)= "editTodo(item.id)">
+        <div>{{'name:'+item.name}}<br>
+        {{'isCompleted:'+item.isCompleted}}</div>
+       
+        <button class="btn btn-primary" (click)="check(item)" >CHECK</button>
+        <button class="btn btn-primary" (click)="deleteTodo(item.id)">DELETE</button>
+    </li>
+</ul>
